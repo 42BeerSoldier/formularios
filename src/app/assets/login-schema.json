@@ -1,0 +1,27 @@
+{
+  "title": "Iniciar Sesión",
+  "steps": [
+    {
+      "id": "login",
+      "title": "Credenciales",
+      "fields": [
+        {
+          "id": "email",
+          "type": "text",
+          "label": "Correo electrónico",
+          "placeholder": "ejemplo@dominio.com",
+          "required": true,
+          "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+        },
+        {
+          "id": "password",
+          "type": "password",
+          "label": "Contraseña",
+          "required": true,
+          "minLength": 6,
+          "maxLength": 20
+        }
+      ]
+    }
+  ]
+}
