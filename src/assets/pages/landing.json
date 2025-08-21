@@ -1,0 +1,36 @@
+{
+  "title": "Landing page de ejemplo",
+  "wrap": {
+    "type":"div",
+    "class": "w-10/12 flex p-5 bg-white rounded-[30px] shadow-md m-6",
+    "children": [
+      {
+        "type"  :"div",
+        "class": "flex flex-row p-4 gap-4",
+        "children":[
+          {
+            "type": "header",
+            "class": "bg-blue-500 text-white p-4",
+            "content": "Bienvenido a la Landing Page"
+          },
+          {
+            "type":"main",
+            "content":"main pagina"
+          },
+          {
+            "type":"footer",
+            "content":"footer de ejemplo"
+          },
+          {
+            "type": "component",
+            "component": "app-user-card",
+            "inputs": {
+              "name": "Felipe Díaz",
+              "avatar": "/assets/avatar.jpg"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

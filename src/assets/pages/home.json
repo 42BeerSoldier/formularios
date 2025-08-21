@@ -1,0 +1,31 @@
+{
+  "title": "HOME",
+  "wrap": {
+    "type":"div",
+    "class": "container mx-auto flex flex-col items-center px-8 py-36 sm:flex-row-reverse sm:px-12",
+    "children": [
+      {
+        "type": "div",
+        "class": "mb-8 w-full sm:mb-0 sm:w-1/2 sm:pl-4 md:pl-16",
+        "children": [
+          {
+            "type": "img",
+            "src": "assets/images/pexels-ketut-subiyanto-4353618.jpg",
+            "alt": "Hanging out with friends",
+            "class": "rounded-lg sm:rounded-br-[80px] sm:rounded-tl-[120px]"
+          }
+        ]
+      },
+      {
+        "type":"div",
+        "class":"mr-4 w-full text-center sm:w-1/2 sm:text-left",
+        "children":[
+          {
+            "type": "html",
+            "content": "<h1 class='mb-6 text-3xl font-bold leading-tight dark:text-slate-50 md:text-4xl'>Hangout, work or just relax? Got it!</h1>"
+          }
+        ]
+      }
+    ]
+  }
+}

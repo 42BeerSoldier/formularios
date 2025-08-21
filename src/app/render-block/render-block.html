@@ -1,0 +1,96 @@
+
+<!-- Generic wrapper -->
+<ng-container [ngSwitch]="block?.type">
+
+  <!-- Componentes. -->
+<!-- Renderizar texto plano -->
+  <p *ngSwitchCase="'text'" [ngClass]="block.class">{{ block.content }}</p>
+
+  <!-- Renderizar HTML directo -->
+    <div *ngSwitchCase="'html'" [innerHTML]="block.content" [ngClass]="block.class"></div>
+
+
+  <!-- Div -->
+  <div *ngSwitchCase="'div'" [ngClass]="block.class">
+    <ng-container *ngFor="let child of block.children">
+      <app-render-block [block]="child"></app-render-block>
+    </ng-container>
+  </div>
+
+   <!-- HEADER -->
+  <header *ngSwitchCase="'header'" [ngClass]="block.class">
+    {{ block.content }}
+  </header>
+
+  <!-- Parrafo -->
+  <p *ngSwitchCase="'pagraph'" [ngClass]="block.class"> 
+    <ng-container *ngFor="let child of block.children">
+      <app-render-block [block]="child"></app-render-block>
+    </ng-container>
+  </p>
+
+  <!-- IMAGEN -->
+  <img
+    *ngSwitchCase="'img'"
+    [src]="block.src"
+    [alt]="block.alt || ''"
+    [ngClass]="block.class"
+  />
+
+  <!-- SECTION -->
+  <section *ngSwitchCase="'section'" [ngClass]="block.class">
+    {{ block.content }}
+  </section>
+
+  <!-- SECTION -->
+  <section *ngSwitchCase="'section'" [ngClass]="block.class">
+    {{ block.content }}
+  </section>
+
+   <!-- ASIDE -->
+  <aside *ngSwitchCase="'aside'" [ngClass]="block.class">
+    {{ block.content }}
+  </aside>
+
+  <!-- ARTICLE -->
+  <article *ngSwitchCase="'article'" [ngClass]="block.class">
+
+    <!-- Título -->
+    <h1 *ngIf="block.title" class="text-2xl font-bold mb-2">{{ block.title }}</h1>
+
+    <!-- Subtítulo -->
+    <h2 *ngIf="block.subtitle" class="text-lg text-gray-600 mb-2">{{ block.subtitle }}</h2>
+
+    <!-- Contenido -->
+    <p *ngIf="block.content" class="text-base mb-4">{{ block.content }}</p>
+
+    <!-- Hijos -->
+    <ng-container *ngIf="block.children">
+
+      <ng-container *ngFor="let child of block.children">
+        <app-render-block [block]="child"></app-render-block>
+      </ng-container>
+
+    </ng-container>
+
+  </article>
+  <!-- Form -->
+  <form *ngSwitchCase="'form'" [ngClass]="block.class">
+    <div *ngFor="let field of block.fields">
+      <label>{{ field.label }}</label>
+      <input [type]="field.type" [name]="field.name" class="border p-2 w-full" />
+    </div>
+  </form>
+
+
+  <!-- FOOTER -->
+  <footer *ngSwitchCase="'footer'" [ngClass]="block.class">
+    {{ block.content }}
+  </footer>
+
+  <!-- Default -->
+  <div *ngSwitchDefault>
+    Tipo no soportado: {{ block.type }}
+  </div>
+
+</ng-container>
