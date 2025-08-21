@@ -1,1 +1,52 @@
 <p>dynamic-field works!</p>
+<div class="mb-4" [class.hidden]="!isVisible()">
+  <label *ngIf="field.type !== 'checkbox'" class="block mb-1 font-medium text-sm text-gray-700">
+    {{ field.label }}
+  </label>
+
+  <!-- TEXT -->
+  <input *ngIf="field.type === 'text'" type="text"
+         class="w-full rounded border px-3 py-2"
+         [placeholder]="field.placeholder" />
+
+  <!-- NUMBER -->
+  <input *ngIf="field.type === 'number'" type="number"
+         class="w-full rounded border px-3 py-2"
+         [placeholder]="field.placeholder"
+         />
+
+  <!-- DATE -->
+  <input *ngIf="field.type === 'date'" type="date"
+         class="w-full rounded border px-3 py-2"
+          />
+
+  <!-- PASSWORD -->
+  <input *ngIf="field.type === 'password'" type="password"
+         class="w-full rounded border px-3 py-2"
+         [placeholder]="field.placeholder"
+         />
+
+  <!-- CHECKBOX -->
+  <label *ngIf="field.type === 'checkbox'" class="inline-flex items-center gap-2">
+    <input type="checkbox"
+           class="rounded border" />
+    <span>{{ field.label }}</span>
+  </label>
+
+  <!-- SELECT -->
+  <select *ngIf="field.type === 'select'"
+          class="w-full rounded border px-3 py-2">
+    <option [ngValue]="null">-- Selecciona --</option>
+    <option *ngFor="let opt of field.options" [ngValue]="opt.value">{{ opt.label }}</option>
+  </select>
+
+  <!-- Validaciones -->
+  <div NgIf="isInvalid()" class="text-sm text-red-600 mt-1">
+    <div NgIf="form.controls[field.id].errors?.['required']">Este campo es obligatorio.</div>
+    <div NgIf="form.controls[field.id].errors?.['min']">Valor muy bajo.</div>
+    <div NgIf="form.controls[field.id].errors?.['max']">Valor muy alto.</div>
+    <div NgIf="form.controls[field.id].errors?.['minlength']">Muy corto.</div>
+    <div NgIf="form.controls[field.id].errors?.['maxlength']">Muy largo.</div>
+    <div NgIf="form.controls[field.id].errors?.['pattern']">Formato inválido.</div>
+  </div>
+</div>

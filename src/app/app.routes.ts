@@ -1,8 +1,10 @@
 import { Routes } from '@angular/router';
-import { DynamicFormComponent } from './dynamic-form/dynamic-form';
+
+import { PageRendererComponent } from './pages/page-renderer-component/page-renderer-component';
+import { Home } from './pages/home/home';
 
 export const routes: Routes = [
-  { path: 'dynamic-form', component: DynamicFormComponent },
-  { path: '', redirectTo: '/dynamic-form', pathMatch: 'full' },
-  { path: '**', redirectTo: '/dynamic-form' }
+	{ path: 'page/:page', component: PageRendererComponent },
+	{ path: 'home', component: Home },
+  	{ path: '', redirectTo: '/home', pathMatch: 'full' }
 ];

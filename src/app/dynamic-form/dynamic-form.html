@@ -1,1 +1,12 @@
-<p>dynamic-form works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-6">
+  <ng-container *ngFor="let field of schema.steps[stepIndex].fields">
+    <app-dynamic-field [field]="field" [form]="form"></app-dynamic-field>
+  </ng-container>
+  <div class="flex justify-between">
+    <button type="button" (click)="previous()" class="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400" [disabled]="stepIndex === 0">Anterior</button>
+    <div>
+      <button *ngIf="stepIndex < schema.steps.length - 1" type="button" (click)="next()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 ml-2">Siguiente</button>
+      <button *ngIf="stepIndex === schema.steps.length - 1" type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 ml-2">Enviar</button>
+    </div>
+  </div>
+</form>
