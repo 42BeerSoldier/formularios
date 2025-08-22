@@ -1,0 +1,1853 @@
+{
+  "salud": {
+     "steps": [
+      {
+        "order": 1,
+        "number": 1,
+        "title": "Ingreso denuncia",
+        "subtitle": "Cuéntanos, ¿que fue lo que te pasó?",
+        "shortDescription": "Proporcione los antecedentes de salud básicos",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Al ingresar los datos de la persona, podremos identificar al asegurado y validar la vigencia. Esta información permitirá acelerar el proceso de evaluación, derivación y compensación según corresponda.",
+        "fields": [
+          {
+            "title": true,
+            "label": "¿Qué te sucedió?"
+          },
+          {
+            "name": "motivo-salud",
+            "label": "Seleccione un Motivo",
+            "type": "select",
+            "content": "motives-heatlh",
+            "placeholder": "Seleccione un motivo",
+            "errors": {
+              "required": "El motivo es obligatorio"
+            },
+            "colspan": 2
+          },
+          { "line": true },
+          { "title": true, "label": "Datos Personales" },
+          {
+            "label": "Nombre",
+            "name": "first-name",
+            "placeholder": "Ingrese su nombre de pila",
+            "errors": {
+              "required": "El nombre es obligatorio",
+              "minlength": "El nombre debe tener al menos 2 caracteres",
+              "maxlength": "El nombre no puede exceder los 50 caracteres"
+            }
+          },
+          {
+            "label": "Apellido",
+            "name": "last-name",
+            "placeholder": "Ingrese su primer apellido",
+            "errors": {
+              "required": "El nombre es obligatorio",
+              "minlength": "El nombre debe tener al menos 2 caracteres",
+              "maxlength": "El nombre no puede exceder los 50 caracteres"
+            }
+          },
+          {
+            "name": "rut",
+            "label": "RUT",
+            "type": "text",
+            "placeholder": "Ingrese su RUT"
+          },
+          {
+            "name": "is-insured",
+            "label": "¿Eres tú el asegurado titular?",
+            "type": "radio",
+            "content": "yesno"
+          }
+        ]
+      },
+      {
+        "order": 2,
+        "number": 2,
+        "title": "Completar Datos",
+        "subtitle": "Indique los detalles de denuncia",
+        "shortDescription": "Ingrese tipo de denuncia",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "",
+        "fields": [
+          {
+            "name": "denuncia-tipo",
+            "label": "Indique tipo de denuncia",
+            "type": "select",
+            "content": "motives-type",
+            "colspan": 2
+          },
+          {
+            "name": "affected-person",
+            "label": "¿Quien es la persona afectada?",
+            "type": "select",
+            "content": "terceros"
+          },
+          {
+            "label": "Si no ves reflejada a la persona afectada, por favor, contacta al call center 600 320 3000. Presione el botón 'Cancelar' para salir del caso.",
+            "type": "label",
+            "colspan": 2
+          },
+          {
+            "name": "health-type",
+            "label": "Estuvo Hospitalizado?",
+            "type": "select",
+            "content": "motives-type",
+            "colspan": 2
+          },
+          {
+            "name": "health-illness",
+            "label": "Fecha de Ingreso",
+            "type": "date",
+            "placeholder": "Seleccione la fecha de ingreso"
+          },
+          {
+            "name": "health-discharge",
+            "label": "Fecha de Egreso",
+            "type": "date",
+            "placeholder": "Seleccione la fecha de egreso"
+          },
+          {
+            "line": true
+          },
+          {
+            "label": "Relata los hechos",
+            "type": "textarea",
+            "name": "health-relato",
+            "placeholder": "Ingrese su relato",
+            "help": "El relato de los hechos debe contener entre 30 y 2000 caracteres",
+            "tooltip": "Describa detalladamente lo ocurrido, incluyendo fechas, lugares y circunstancias.",
+            "colspan": 2
+          }
+
+        ]
+      },
+      {
+        "order": 3,
+        "number": 3,
+        "title": "Cargar Documentación",
+        "subtitle": "Adjunte archivos adicionales",
+        "shortDescription": "Adjunte archivos adicionales relacionados con el evento",
+        "longDescriptionTitle": "Servicios y seguros de salud personalizados",
+        "longDescriptionText": "Ingrese toda la documentacion que acredite el evento de salud, como informes médicos, recetas o cualquier otro documento relevante.",
+        "fields": [
+          {
+            "title": true,
+            "label": "Cuando Ocurró el Evento"
+          },
+          {
+            "name": "event-date",
+            "label": "Fecha",
+            "type": "date",
+            "placeholder": "Seleccione la fecha del evento",
+            "colspan": 2
+          },
+          { "line": true },
+          { "title": true, "label": "Documentación Solicitada" },
+          {
+            "label": "El tamaño de archivo es de 20 MB máximo. Podrá adjuntar archivos en formato PDF, JPG, PNG o DOCX. Por tu seguridad no enviar archivos  encriptados o link.",
+            "type": "label",
+            "colspan": 2
+          },
+          {
+            "name":"motivo-micromovilidad",
+            "label": "Se solicita adjuntar",
+            "type": "select",
+            "content": "motives-report",
+            "tooltip": "Adjunte documentos que respalden su denuncia, como constancias policial o informes de fraude."
+          },
+          {
+            "name":"file-upload",
+            "label": "Adjunte documentos",
+            "type": "file"
+          }
+        ]
+      },
+      {
+        "order": 4,
+        "number": 4,
+        "title": "Finalizar Denuncia",
+        "subtitle": "Confirme y envíe la solicitud",
+        "shortDescription": "Confirme y envíe la solicitud de denuncia",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Todas las comunicaciones en el marco del proceso de liquidacion, seran enviadas a tu email, salvo que notifiques la oposición a esta via de comunicación y te será notificado directamente por correo certificado",
+        "fields": [
+          {
+            "label": "Datos del Contacto",
+            "title": true
+          },
+          {
+            "label": "Correo Electrónico",
+            "type": "email",
+            "placeholder": "Ingrese su correo electrónico",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$",
+            "errors": {
+              "required": "El correo es obligatorio",
+              "pattern": "Correo inválido"
+            },
+            "required": true,
+            "name": "email"
+          },
+          {
+            "label": "Confirme Correo Electrónico",
+            "type": "email",
+            "placeholder": "Confirme su correo electrónico",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$",
+            "errors": {
+              "required": "El correo es obligatorio",
+              "pattern": "Correo inválido"
+            },
+            "required": true,
+            "name": "confirm-email"
+          },
+          {
+            "label": "Autorizo a que todas la comunicacione en la atenciópn de esta denuncia se realicen a la dirección de correo electrónico antes señalada.",
+            "type": "checkbox",
+            "colspan": 2,
+            "content": [
+              {
+                "label": "Confirmo que la información proporcionada es correcta y completa."
+              }
+            ]
+          },
+
+          {
+            "type": "select",
+            "label": "Tipo de Teléfono",
+            "content": "phone-type",
+            "name": "phone-type",
+            "placeholder": "Seleccione tipo de teléfono"
+          },
+          {
+            "label": "Número Telefono",
+            "placeholder": "Ingrese su numero de telefono",
+            "name": "phone-number",
+            "required": true,
+            "errors": {
+              "required": "El número de teléfono es obligatorio",
+              "pattern": "Número de teléfono inválido"
+            },
+            "pattern": "^[0-9]{8,15}$"
+          },
+          {
+            "label": "Confirme Número Teléfono",
+            "placeholder": "Confirme su numero de telefono",
+            "name": "confirm-phone-number",
+            "required": true,
+            "errors": {
+              "required": "El número de teléfono es obligatorio",
+              "pattern": "Número de teléfono inválido"
+            },
+            "pattern": "^[0-9]{8,15}$"
+          },
+        
+          {
+            "line": true
+          },
+          {
+            "label": "En caso de corresponder pago, ¿Desea recibirlo en su Cuenta Bancaria?",
+            "type": "radio",
+            "content": "yesno",
+            "colspan": 2
+          },
+          {
+            "label": "Podrá modificar esta decisón posteriormente en caso de indicar 'No', se utilizará vale vista para el pago. en caso de indicar 'Si', deberá con los datos de la Cuenta Corriente",
+            "type": "label",
+            "colspan": 2
+          },
+           {
+            "label": "Institución bancaria",
+            "type": "select",
+            "content": "bancos-list",
+            "colspan": 2
+          },
+          {
+            "label": "Tipo de cuenta",
+            "type": "select",
+            "content": "cuentas-tipo"
+          },
+           {
+            "label": "Número de cuenta",
+            "content": "cuentas-tipo"
+          },
+          {
+            "label": "En caso de corresponder pago, sevalidará que el RUT titular de la Cuenta Corriente se corresponda con el RUT siniestrado",
+            "type": "label",
+            "colspan": 2
+          }
+        ]
+      }
+    ]
+  },
+
+  "cesantia": {
+     "steps": [
+      {
+        "order": 1,
+        "number": 1,
+        "title": "Ingreso denuncia",
+        "subtitle": "Cuéntanos, ¿que fue lo que te pasó?",
+        "shortDescription": "Proporcione los antecedentes básicos del afectado",
+        "longDescriptionTitle": "Servicios Personalizados de seguros",
+        "longDescriptionText": "Al ingresar los datos personales, podremos identificar al asegurado y validar la vigencia. Esta información permitirá acelerar el proceso de evaluación, derivación y compensación según corresponda.",
+        "fields": [
+          {
+            "title": true,
+            "label": "¿Qué te sucedió?"
+          },
+          {
+            "name": "motivo-cesantia",
+            "label": "Seleccione un Motivo",
+            "type": "select",
+            "content": "motives-cesantia"
+          },
+          {
+            "line": true
+          },
+          {
+            "title": true,
+            "label": "Datos Personales"
+          },
+          {
+            "name": "first-name",
+            "label": "Nombre",
+            "placeholder": "Ingrese su nombre de pila"
+          },
+          {
+            "name": "last-name",
+            "label": "Apellido",
+            "placeholder": "Ingrese su primer apellido"
+          },
+          {
+            "name": "rut",
+            "label": "RUT",
+            "placeholder": "Ingrese su RUT"
+          },
+          {
+            "name": "is-insured",
+            "label": "¿Eres tú el asegurado titular?",
+            "type": "radio",
+            "content": "yesno"
+          }
+        ]
+      },
+      {
+        "order": 2,
+        "number": 2,
+        "title": "Completar Datos",
+        "subtitle": "Indique los detalles de denuncia",
+        "shortDescription": "Ingrese tipo de denuncia",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "",
+        "fields": [
+          {
+            "name": "denuncia-tipo",
+            "label": "Indique tipo de denuncia",
+            "type": "select",
+            "content": "motives-type"
+          },
+          {
+            "line": true
+          },
+          {
+            "title": true,
+            "label": "Cuéntanos mas sobre tu caso"
+          },
+          {
+            "type":"label",
+            "label": "Para una mejor evaluacion de tu caso, es importante que nos proporciones la mayor información de cómo ocurrieron los hechos.",
+            "colspan": 2
+          },
+          {
+            "name": "motivo-cesantia",
+            "label": "Motivo del cual está cesante",
+            "type": "select",
+            "content": "motives-fired",
+            "colspan": 2
+          },
+          {
+            "name": "employment-date-onboarding",
+            "label": "Fecha de inicio de cesantía",
+            "placeholder": "Fecha de inicio de cesantía",
+            "type": "date"
+          },
+          {
+            "name": "employment-date-termination",
+            "placeholder": "Fecha de término de contrato",
+            "label": "Fecha de término de contrato",
+            "type": "date"
+          },
+          {
+            "name": "employment-rut-employer",
+            "type": "text",
+            "placeholder": "Ingrese el RUT del empleador",
+            "label": "RUT Empleador",
+            "errors": {
+              "pattern": "RUT inválido"
+            },
+            "pattern": "^[0-9]{1,8}-[0-9kK]{1}$"
+          },
+          {
+            "name": "employment-name-employer",
+            "type": "text",
+            "label": "Nombre del Empleador",
+            "placeholder": "Ingrese el nombre del empleador",
+            "errors": {
+              "required": "El nombre del empleador es obligatorio",
+              "minlength": "El nombre debe tener al menos 2 caracteres",
+              "maxlength": "El nombre no puede exceder los 50 caracteres"
+            },
+            "required": true
+          },
+          {
+            "name": "employment-job-related",
+            "label": "Relata los hechos",
+            "type": "textarea",
+            "placeholder": "Ingrese su relato",
+            "help": "El relato de los hechos debe contener entre 30 y 2000 caracteres",
+            "tooltip": "Describa detalladamente lo ocurrido, incluyendo fechas, lugares y circunstancias.",
+            "colspan": 2
+          }
+        ]
+      },
+      {
+        "order": 3,
+        "number": 3,
+        "title": "Cargar Documentación",
+        "subtitle": "Adjunte archivos adicionales",
+        "shortDescription": "Adjunte archivos adicionales",
+        "longDescriptionTitle": "Servicios Personalizados de Seguros",
+        "longDescriptionText": "Sección donde podra adjuntar documentos que respalden su caso con documentación que considere relevante.",
+        "fields": [
+          {
+            "title": true,
+            "label": "Cuando Ocurró el Evento"
+          },
+          {
+            "name": "event-date",
+            "label": "Fecha",
+            "type": "date",
+            "placeholder": "Fecha de Ocurrencia"
+          },
+
+          { "line": true },
+          { "title": true, "label": "Documentación Solicitada" },
+
+          {
+            "label": "El tamaño de archivo es de 20 MB máximo. Podrá adjuntar archivos en formato PDF, JPG, PNG o DOCX. Por tu seguridad no enviar archivos  encriptados o link.",
+            "type": "label",
+            "colspan": 2
+          },
+          {
+            "name": "file-upload",
+            "label": "Adjunte documentos",
+            "type": "file"
+          },     
+          {
+            "name": "file-upload-select",
+            "label": "Se solicita adjuntar",
+            "type": "select",
+            "content": "motives-documentation",
+            "tooltip": "Adjunte documentos que respalden su denuncia, como constancias policial o informes de fraude."
+          },
+
+          {
+            "label": "Puede sumar todos los documentos que considere necesarios y relevantes, indicando descripción del mismo y adjuntándolo",
+            "type": "label",
+            "colspan": 2
+          },
+          { 
+            "name": "file-upload-others",
+            "type": "file",
+            "label": "Adjuntar otro documento"
+          },
+          {
+            "name": "file-upload-others-description",
+            "type" : "textarea",
+            "label": "Descripción del documento",
+            "placeholder": "Ingrese una descripción del documento que adjuntó."
+          }
+        ]
+      },
+      {
+        "order": 4,
+        "number": 4,
+        "title": "Finalizar Denuncia",
+        "subtitle": "Confirme y envíe la solicitud",
+        "shortDescription": "Confirme y envíe la solicitud de denuncia",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Todas las comunicaciones en el marco del proceso de liquidacion, seran enviadas a tu email, salvo que notifiques la oposición a esta via de comunicación y te será notificado directamente por correo certificado",
+        "fields": [
+          {
+            "label": "Datos del Contacto",
+            "title": true
+          },
+          {
+            "name": "email",
+            "label": "Correo Electrónico",
+            "type": "email",
+            "placeholder": "Ingrese su correo electrónico",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$",
+            "errors": {
+              "required": "El correo es obligatorio",
+              "pattern": "Correo inválido"
+            }
+          },
+          {
+            "name": "confirm-email",
+            "label": "Confirme Correo Electrónico",
+            "type": "email",
+            "placeholder": "Confirme su correo electrónico",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$",
+            "errors": {
+              "required": "El correo es obligatorio",
+              "pattern": "Correo inválido"
+            }
+          },
+          {
+            "label": "Autorizo a que todas la comunicacione en la atenciópn de esta denuncia se realicen a la dirección de correo electrónico antes señalada.",
+            "type": "checkbox",
+            "colspan": 2,
+            "content": [
+              {
+                "label": "Confirmo que la información proporcionada es correcta y completa."
+              }
+            ]
+          },
+          {
+            "name": "phone-type",
+            "type": "select",
+            "label": "Tipo de Teléfono",
+            "content": "phone-type"
+          },
+          {
+            "name": "phone-number",
+            "label": "Número Telefono",
+            "placeholder": "Ingrese su numero de telefono"
+          },
+          {
+            "name": "confirm-phone-number",
+            "label": "Confirme Número Teléfono",
+            "placeholder": "Confirme su numero de telefono"
+          },
+          { "line": true },
+          {
+            "name": "payment-receive",
+            "label": "En caso de corresponder pago, ¿desea Recibirlo en su Cuenta Bancaria?",
+            "type": "radio",
+            "content": "yesno",
+            "colspan": 2
+          },
+          {
+            "label": "Podrá modificar esta decisón posteriormente en caso de indicar 'No', se utilizará vale vista para el pago. en caso de indicar 'Si', deberá con los datos de la Cuenta Corriente",
+            "type": "label",
+            "colspan": 2
+          },
+          {
+            "name": "bank-institution", 
+            "label": "Institución bancaria",
+            "type": "select",
+            "content": "bancos-list",
+            "required": true,
+            "colspan": 2
+          },
+          {
+            "name": "account-type",
+            "label": "Tipo de cuenta",
+            "type": "select",
+            "content": "cuentas-tipo",
+            "required": true
+          },
+          {
+            "name": "account-number",
+            "type": "text",
+            "pattern": "^[0-9]{1,20}$",
+            "label": "Número de cuenta",
+            "placeholder": "Ingrese el número de cuenta",
+            "errors": {
+              "pattern": "Número de cuenta inválido"
+            },
+            "required": true
+          },
+          {
+            "label": "En caso de corresponder pago, sevalidará que el RUT titular de la Cuenta Corriente se corresponda con el RUT siniestrado",
+            "type": "label",
+            "colspan": 2
+          }
+        ]
+      }
+    ]
+  },
+
+  "robo": {
+    "steps": [
+      {
+        "order": 1,
+        "number": 1,
+        "title": "Ingresar Denuncia",
+        "subtitle": "Proporcione antecedestes.",
+        "shortDescription": "Proporcione los antecedentes para la denuncia de robo",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Al ingresar  del vehículo, podremos identificar al asegurado y validar la vigencia. Esta información permitirá acelerar el proceso de evaluación, derivación y compensación según corresponda.",
+        "fields": [
+          {
+            "title": true,
+            "label": "¿Qué te sucedió?"
+          },
+          {
+            "name": "motivo-robo",
+            "label": "Seleccione un Motivo",
+            "type": "select",
+            "content": "motives-steal",
+            "placeholder": "Seleccione un motivo",
+            "colspan": 2,
+            "required": true
+          },
+          { "line": true },
+          { "title": true, "label": "tus datods personales" },
+          {
+            "name": "first-name",
+            "type": "text",
+            "label": "Nombre",
+            "placeholder": "Ingrese su nombre de pila",
+            "required": true,
+            "errors": {
+              "required": "El nombre es obligatorio",
+              "minlength": "El nombre debe tener al menos 2 caracteres",
+              "maxlength": "El nombre no puede exceder los 50 caracteres"
+            }
+          },
+          {
+            "name": "last-name",
+            "label": "Apellido",
+            "placeholder": "Ingrese su primer apellido",
+            "required": true,
+            "errors": {
+              "required": "El nombre es obligatorio",
+              "minlength": "El nombre debe tener al menos 2 caracteres",
+              "maxlength": "El nombre no puede exceder los 50 caracteres"
+            }
+          },
+          {
+            "name": "rut",
+            "label": "RUT",
+            "placeholder": "Ingrese su RUT",
+            "required": true,
+            "errors": {
+              "required": "El RUT es obligatorio",
+              "pattern": "RUT inválido"
+            }
+          },
+          {
+            "label": "¿Eres tú el asegurado titular?",
+            "type": "radio",
+            "content": "yesno"
+          }
+        ]
+      },
+      {
+        "order": 2,
+        "number": 2,
+        "title": "Completar Datos",
+        "subtitle": "Indique los detalles del accidente",
+        "shortDescription": "Ingrese los datos del vehículo afectado",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Seleccione la patente del vehículo robado. Describa lo ocurrido, incluya lo mas detallado posible.",
+        "fields": [
+          {
+            "name": "vehicle-affected",
+            "label": "Indique la Patente",
+            "placeholder": "Seleccione la patente del vehículo",
+            "type": "select",
+            "content": "ppu",
+            "required": true
+          },
+          {
+            "name": "vehicle-related",
+            "label": "Relata los hechos",
+            "type": "textarea",
+            "placeholder": "Ingrese su relato",
+            "help": "El relato de los hechos debe contener entre 30 y 2000 caracteres",
+            "colspan": 2,
+            "required": true
+          }
+        ]
+      },
+      {
+        "order": 3,
+        "number": 3,
+        "title": "Cargar Documentación",
+        "subtitle": "Adjunte archivos adicionales",
+        "shortDescription": "Adjunte archivos adicionales relacionados con el accidente",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Sección donde podra adjuntar documentos que respalden su denuncia, como constancias policiales o informes de fraude incluso otro tipo de documentación que considere relevante.",
+        "fields": [
+          {
+            "title": true,
+            "label": "Cuando Ocurró el Evento"
+          },
+          {
+            "name": "event-date",
+            "label": "Fecha",
+            "type": "date",
+            "placeholder": "Seleccione la fecha del evento",
+            "colspan": 1,
+            "required": true
+          },
+          {
+            "line": true
+          },
+          {
+            "title": true,
+            "label": "Documentación Solicitada"
+          },
+          {
+            "label": "El tamaño de archivo es de 20 MB máximo. Podrá adjuntar archivos en formato PDF, JPG, PNG o DOCX. Por tu seguridad no enviar archivos  encriptados o link.",
+            "type": "label",
+            "colspan": 2
+          },
+          {
+            "name": "file-upload",
+            "label": "Se solicita adjuntar",
+            "type": "select",
+            "content": "motives-report",
+            "tooltip": "Adjunte documentos que respalden su denuncia, como constancias policial o informes de fraude."
+          },
+          {
+            "name":"file-upload-1",
+            "label": "Adjunte documentos",
+            "type": "file"
+          },     
+          {
+            "label": "Puede sumar todos los documentos que considere necesarios y relevantes, indicando descripción del mismo y adjuntándolo",
+            "type": "label",
+            "colspan": 2
+          },
+          {
+            "name": "file-upload-2",
+            "type" : "textarea",
+            "label": "Descripción del documento",
+            "placeholder": "Ingrese una descripción del documento"
+          },
+          { 
+            "name": "file-upload-3",
+            "type": "file",
+            "label": "Adjuntar otro documento"
+          }
+        ]
+      },
+      {
+        "order": 4,
+        "number": 4,
+        "title": "Finalizar Denuncia",
+        "subtitle": "Confirme y envíe la solicitud",
+        "shortDescription": "Confirme y envíe la solicitud de denuncia",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Todas las comunicaciones en el marco del proceso de liquidacion, seran enviadas a tu email, salvo que notifiques la oposición a esta via de comunicación y te será notificado directamente por correo certificado",
+        "fields": [
+          {
+            "label": "Datos del Contacto",
+            "title": true
+          },
+          {
+            "name": "email",
+            "label": "Correo Electrónico",
+            "type": "email",
+            "placeholder": "Ingrese su correo electrónico",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$",
+            "errors": {
+              "required": "El correo es obligatorio",
+              "pattern": "Correo inválido"  
+            },
+            "required": true
+          },
+          {
+            "name": "confirm-email",
+            "label": "Confirme Correo Electrónico",
+            "type": "email",
+            "placeholder": "Confirme su correo electrónico",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$",
+            "errors": {
+              "required": "El correo es obligatorio",
+              "pattern": "Correo inválido"
+            },
+            "required": true
+          },
+          {
+            "label": "Autorizo a que todas la comunicacione en la atenciópn de esta denuncia se realicen a la dirección de correo electrónico antes señalada.",
+            "type": "checkbox",
+            "colspan": 2,
+            "content": [
+              {
+                "label": "Confirmo que la información proporcionada es correcta y completa."
+              }
+            ]
+          },
+          {
+
+            "type": "select",
+            "label": "Tipo de Teléfono",
+            "content": "phone-type",
+            "name": "phone-type",
+            "placeholder": "Seleccione tipo de teléfono"
+          },
+          {
+            "label": "Número Telefono",
+            "placeholder": "Ingrese su numero de telefono",
+            "name": "phone-number",
+            "required": true,
+            "errors": {
+              "required": "El número de teléfono es obligatorio",
+              "pattern": "Número de teléfono inválido"
+            },
+            "pattern": "^[0-9]{8,15}$"
+          },
+          {
+            "label": "Confirme Número Teléfono",
+            "placeholder": "Confirme su numero de telefono",
+            "name": "confirm-phone-number",
+            "required": true,
+            "errors": {
+              "required": "El número de teléfono es obligatorio",
+              "pattern": "Número de teléfono inválido"
+            },
+            "pattern": "^[0-9]{8,15}$"
+          },
+          {
+            "line": true
+          },
+          {
+            "label": "En caso de corresponder pago, ¿desea Recibirlo en su Cuenta Bancaria?",
+            "type": "radio",
+            "content": "yesno",
+            "colspan": 2
+          },
+          {
+            "label": "Podrá modificar esta decisón posteriormente en caso de indicar 'No', se utilizará vale vista para el pago. en caso de indicar 'Si', deberá con los datos de la Cuenta Corriente",
+            "type": "label",
+            "colspan": 2
+          },
+          {
+            "label": "Institución bancaria",
+            "type": "select",
+            "content": "bancos-list",
+            "colspan": 2,
+            "name": "banco",
+            "placeholder": "Seleccione su banco",
+            "required": true
+          },
+          {
+            "label": "Tipo de cuenta",
+            "type": "select",
+            "content": "cuentas-tipo",
+            "name": "tipo-cuenta",
+            "placeholder": "Seleccione tipo de cuenta",
+            "required": true
+          },
+          {
+            "label": "Número de cuenta",
+            "content": "cuentas-tipo",
+            "name": "numero-cuenta",
+            "placeholder": "Ingrese su número de cuenta",
+            "required": true
+          },
+          {
+            "label": "En caso de corresponder pago, sevalidará que el RUT titular de la Cuenta Corriente se corresponda con el RUT siniestrado",
+            "type": "label",
+            "colspan": 2
+          }
+        ]
+      }
+    ]
+  },
+
+  "fraude": {
+    "steps": [
+      {
+        "order": 1,
+        "number": 1,
+        "title": "Ingreso denuncia",
+        "subtitle": "Cuéntanos, ¿que fue lo que te pasó?",
+        "shortDescription": "Proporcione los antecedentes básicos del evento de fraude",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Al ingresar los datos del vehículo, podremos identificar al asegurado y validar la vigencia del SOAP. Esta información permitirá acelerar el proceso de evaluación, derivación y compensación según corresponda. Es importante que los datos coincidan con el certificado del SOAP vigente.",
+        "fields": [
+          {
+            "title": true,
+            "label": "¿Qué te sucedió?",
+            "colspan": 2
+          },
+          {
+            "label": "Seleccione un Motivo",
+            "type": "select",
+            "content": "motives-fraud",
+            "colspan": 2,
+            "required": true,
+            "name": "motivo-fraude",
+            "placeholder": "Seleccione un motivo",
+            "errors": {
+              "required": "El motivo es obligatorio"
+            }
+          },
+          {
+            "line": true
+          },
+          {
+            "title": true,
+            "label": "Datos Personales"
+          },
+          {
+            "label": "Nombre",
+            "placeholder": "Ingrese su nombre de pila",
+            "required": true,
+            "errors": {
+              "required": "El nombre es obligatorio",
+              "minlength": "El nombre debe tener al menos 2 caracteres",
+              "maxlength": "El nombre no puede exceder los 50 caracteres"
+            },
+            "name": "first-name"
+          },
+          {
+            "label": "Apellido",
+            "placeholder": "Ingrese su primer apellido",
+            "required": true,
+            "errors": {
+              "required": "El nombre es obligatorio",
+              "minlength": "El nombre debe tener al menos 2 caracteres",
+              "maxlength": "El nombre no puede exceder los 50 caracteres" 
+            },
+            "name": "last-name"
+          },
+          {
+            "label": "RUT",
+            "placeholder": "Ingrese su RUT",
+            "required": true,
+            "errors": {
+              "required": "El RUT es obligatorio",
+              "pattern": "RUT inválido",
+              "minlength": "El RUT debe tener al menos 8 caracteres",
+              "maxlength": "El RUT no puede exceder los 10 caracteres"
+            },
+            "name": "rut",
+            "pattern": "^[0-9]{7,8}-[0-9kK]{1}$",
+            "type": "text"
+          },
+          {
+            "label": "¿Eres tú el asegurado titular?",
+            "type": "radio",
+            "content": "yesno"
+          }
+        ]
+      },
+      {
+        "order": 2,
+        "number": 2,
+        "title": "Completar Datos",
+        "subtitle": "Cuéntanos mas sobre el siniestro",
+        "shortDescription": "Relate los hechos y detalles del evento de fraude.",
+        "longDescriptionTitle": "Cuentenos más sobre el siniestro.",
+        "longDescriptionText": "Es importante detallar los hechos para poder evaluar correctamente la denuncia. Asegúrese de incluir toda la información relevante.",
+        "fields": [
+          {
+            "name": "vehicle-related",
+            "label": "Relata los hechos",
+            "type": "textarea",
+            "placeholder": "Ingrese su relato",
+            "required": true,
+            "help": "El relato de los hechos debe contener entre 30 y 2000 caracteres",
+            "tooltip": "Describa detalladamente lo ocurrido, incluyendo fechas, lugares y circunstancias.",
+            "colspan": 2
+          }
+        ]
+      },
+      {
+        "order": 3,
+        "number": 3,
+        "title": "Cargar Documentación",
+        "subtitle": "Adjunte archivos adicionales",
+        "shortDescription": "Adjunte archivos adicionales relacionados con el accidente",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Seccion donde podra adjuntar documentos que respalden su denuncia, como constancias policial o informes de fraude incluso otro tipo de documentación que considere relevante.",
+        "fields": [
+          {
+            "title": true,
+            "label": "Cuando Ocurró el Evento"
+          },
+          {
+            "label": "Fecha",
+            "type": "date",
+            "placeholder": "Seleccione la fecha del evento",
+            "colspan": 2,
+            "required": true,
+            "name": "event-date"
+          },
+          {
+            "line": true
+          },
+          {
+            "title": true,
+            "label": "Documentación Solicitada"
+          },
+          {
+            "label": "El tamaño de archivo es de 20 MB máximo. Podrá adjuntar archivos en formato PDF, JPG, PNG o DOCX. Por tu seguridad no enviar archivos  encriptados o link.",
+            "type": "label",
+            "colspan": 2
+          },
+          {
+            "name": "file-upload",
+            "label": "Se solicita adjuntar",
+            "type": "select",
+            "content": "motives-report",
+            "tooltip": "Adjunte documentos que respalden su denuncia, como constancias policial o informes de fraude."
+          },
+          {
+            "name":"file-upload-1",
+            "label": "Adjunte documentos",
+            "type": "file"
+          },
+         
+          {
+            "label": "Puede sumar todos los documentos que considere necesarios y relevantes, indicando descripción del mismo y adjuntándolo",
+            "type": "label",
+            "colspan": 2
+          }
+          ,
+          {
+            "name": "file-upload-repeat-1",
+            "type" : "textarea",
+            "label": "Descripción del documento",
+            "placeholder": "Ingrese una descripción del documento"
+          },
+          { 
+            "name": "file-upload-3",
+            "type": "file",
+            "label": "Adjuntar otro documento"
+          }
+        ]
+      },
+      {
+        "order": 4,
+        "number": 4,
+        "title": "Finalizar Denuncia",
+        "subtitle": "Confirme y envíe la solicitud",
+        "shortDescription": "Confirme y envíe la solicitud de denuncia",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Todas las comunicaciones en el marco del proceso de liquidacion, seran enviadas a tu email, salvo que notifiques la oposición a esta via de comunicación y te será notificado directamente por correo certificado",
+        "fields": [
+          {
+            "label": "Datos del Contacto",
+            "title": true
+          },
+          {
+            "name": "email",
+            "label": "Correo Electrónico",
+            "type": "email",
+            "placeholder": "Ingrese su correo electrónico",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$",
+            "errors": {
+              "required": "El correo es obligatorio",
+              "pattern": "Correo inválido"
+            }
+          },
+          {
+            "name": "confirm-email",
+            "label": "Confirme Correo Electrónico",
+            "type": "email",
+            "placeholder": "Confirme su correo electrónico",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$",
+            "errors": {
+              "required": "El correo es obligatorio",
+              "pattern": "Correo inválido"
+            }
+          },
+          {
+            "label": "Autorizo a que todas la comunicacione en la atenciópn de esta denuncia se realicen a la dirección de correo electrónico antes señalada.",
+            "type": "checkbox",
+            "colspan": 2,
+            "content": [
+              {
+                "label": "Confirmo que la información proporcionada es correcta y completa."
+              }
+            ]
+          },
+          {
+            "name": "phone-type",
+            "type": "select",
+            "label": "Tipo de Teléfono",
+            "content": "phone-type"
+          },
+          {
+            "name": "phone-number",
+            "label": "Número Telefono",
+            "placeholder": "Ingrese su numero de telefono",
+            "required": true,
+            "errors": {
+              "required": "El número de teléfono es obligatorio",
+              "pattern": "Número de teléfono inválido"
+            },
+            "pattern": "^[0-9]{8,15}$"
+          },
+          {
+            "name": "confirm-phone-number",
+            "label": "Confirme Número Teléfono",
+            "placeholder": "Confirme su numero de telefono",
+            "required": true,
+            "errors": {
+              "required": "El número de teléfono es obligatorio",
+              "pattern": "Número de teléfono inválido"  
+            },
+            "pattern": "^[0-9]{8,15}$"
+          },
+          {
+            "line": true
+          },
+          {
+            "label": "En caso de corresponder pago, ¿desea Recibirlo en su Cuenta Bancaria?",
+            "type": "radio",
+            "content": "yesno",
+            "colspan": 2
+          },
+          {
+            "label": "Podrá modificar esta decisón posteriormente en caso de indicar 'No', se utilizará vale vista para el pago. en caso de indicar 'Si', deberá con los datos de la Cuenta Corriente",
+            "type": "label",
+            "colspan": 2
+          },
+          {
+            "name": "banco",
+            "label": "Institución bancaria",
+            "type": "select",
+            "content": "bancos-list",
+            "colspan": 2
+          },
+          {
+            "name": "tipo-cuenta",
+            "label": "Tipo de cuenta",
+            "type": "select",
+            "content": "cuentas-tipo"
+          },
+          {
+            "name": "numero-cuenta",
+            "placeholder": "Ingrese su número de cuenta",
+            "label": "Número de cuenta",
+            "content": "cuentas-tipo"
+          },
+          {
+            "label": "En caso de corresponder pago, sevalidará que el RUT titular de la Cuenta Corriente se corresponda con el RUT siniestrado",
+            "type": "label",
+            "colspan": 2
+          }
+        ]
+      }
+    ]
+  },
+
+  "micromovilidad": {
+    "steps": [
+      {
+        "order": 1,
+        "number": 1,
+        "title": "Ingreso denuncia",
+        "subtitle": "Cuéntanos, ¿que fue lo que te pasó?",
+        "shortDescription": "Proporcione los antecedentes básicos del evento",
+        "longDescriptionTitle": "Servicios Personalizados de seguros de Micromovilidad",
+        "longDescriptionText": "Al ingresar los datos, podremos identificar al asegurado y validar la vigencia de la cobertura. Esta información permitirá acelerar el proceso de evaluación, derivación y compensación según corresponda.",
+        "fields": [
+          {
+            "title": true,
+            "label": "Cuéntanos ¿que fue lo que te pasó?"
+          },
+          {
+            "name": "motivo-micromovilidad",
+            "label": "Seleccione un Motivo",
+            "type": "select",
+            "content": "motives-micromovilidad",
+            "colspan": 2
+          },
+          {
+            "line": true
+          },
+          {
+            "title": true,
+            "label": "Datos Personales"
+          },
+          {
+            "name": "first-name",
+            "type": "text",
+            "label": "Nombre",
+            "placeholder": "Ingrese su nombre de pila",
+            "required": true,
+            "errors": {
+              "required": "El nombre es obligatorio",
+              "minlength": "El nombre debe tener al menos 2 caracteres",
+              "maxlength": "El nombre no puede exceder los 50 caracteres"
+            }
+          },
+          {
+            "name": "last-name",
+            "label": "Apellido",
+            "placeholder": "Ingrese su primer apellido",
+            "required": true,
+            "errors": {
+              "required": "El nombre es obligatorio",
+              "minlength": "El nombre debe tener al menos 2 caracteres",
+              "maxlength": "El nombre no puede exceder los 50 caracteres"
+            }
+          },
+          {
+            "name": "rut",
+            "type": "text",
+            "label": "RUT",
+            "placeholder": "Ingrese su RUT"
+          
+          },
+          {
+            "label": "¿Eres tú el asegurado titular?",
+            "type": "radio",
+            "content": "yesno"
+          }
+        ]
+      },
+      {
+        "order": 2,
+        "number": 2,
+        "title": "Completar Datos",
+        "subtitle": "Cuéntanos más sobre el siniestro",
+        "shortDescription": "Proporcione los antecedentes básicos del evento",
+        "longDescriptionTitle": "Servicios Personalizados de seguros de Micromovilidad",
+        "longDescriptionText": "Al ingresar los datos, podremos identificar al asegurado y validar la vigencia de la cobertura. Esta información permitirá acelerar el proceso de evaluación, derivación y compensación según corresponda.",
+        "fields": [
+          {
+            "name": "vehicle-affected",
+            "label": "Indique la Patente",
+            "type": "select",
+            "content": "ppu"
+          },
+          {
+            "name": "vehicle-related",
+            "label": "Relata los hechos",
+            "type": "textarea",
+            "placeholder": "Ingrese su relato",
+            "help": "El relato de los hechos debe contener entre 30 y 2000 caracteres",
+            "tooltip": "Describa detalladamente lo ocurrido, incluyendo fechas, lugares y circunstancias.",
+            "colspan": 2,
+            "required": true,
+            "errors": {
+              "required": "El relato es obligatorio",
+              "minlength": "El relato debe tener al menos 30 caracteres",
+              "maxlength": "El relato no puede exceder los 2000 caracteres"
+            }
+          }
+        ]
+      },
+      {
+        "order": 3,
+        "number": 3,
+        "title": "Cargar Documentación",
+        "subtitle": "Adjunte archivos adicionales",
+        "shortDescription": "Adjunte archivos adicionales relacionados con el accidente",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Seccion donde podra adjuntar documentos que respalden su denuncia, como constancias policial o informes de fraude incluso otro tipo de documentación que considere relevante.",
+        "fields": [
+          {
+            "title": true,
+            "label": "Cuando Ocurró el Evento"
+          },
+          {
+            "name": "event-date",
+            "label": "Fecha",
+            "type": "date",
+            "placeholder": "Seleccione la fecha del evento",
+            "colspan": 2
+          },
+          {
+            "line": true
+          },
+          {
+            "title": true,
+            "label": "Documentación Solicitada"
+          },
+          {
+            "label": "El tamaño de archivo es de 20 MB máximo. Podrá adjuntar archivos en formato PDF, JPG, PNG o DOCX. Por tu seguridad no enviar archivos  encriptados o link.",
+            "type": "label",
+            "colspan": 2
+          },
+          {
+            "name": "file-upload",
+            "label": "Se solicita adjuntar",
+            "type": "select",
+            "content": "motives-report",
+            "tooltip": "Adjunte documentos que respalden su denuncia, como constancias policial o informes de fraude."
+          },
+          {
+            "name":"file-upload-1",
+            "label": "Adjunte documentos",
+            "type": "file"
+          },    
+          {
+
+            "label": "Puede sumar todos los documentos que considere necesarios y relevantes, indicando descripción del mismo y adjuntándolo",
+            "type": "label",
+            "colspan": 2
+          },
+          {
+            "name": "file-upload-repeat-1",
+            "type" : "textarea",
+            "label": "Descripción del documento",
+            "placeholder": "Ingrese una descripción del documento"
+          },
+          { 
+            "name": "file-upload-3",
+            "type": "file",
+            "label": "Adjuntar otro documento"
+          }
+        ]
+      },
+      {
+        "order": 4,
+        "number": 4,
+        "title": "Finalizar Denuncia",
+        "subtitle": "Confirme y envíe la solicitud",
+        "shortDescription": "Confirme y envíe la solicitud de denuncia",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Todas las comunicaciones en el marco del proceso de liquidacion, seran enviadas a tu email, salvo que notifiques la oposición a esta via de comunicación y te será notificado directamente por correo certificado",
+        "fields": [
+          {
+            "label": "Datos del Contacto",
+            "title": true
+          },
+          {
+            "name": "email",
+            "label": "Correo Electrónico",
+            "type": "email",
+            "placeholder": "Ingrese su correo electrónico",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$",
+            "errors": {
+              "required": "El correo es obligatorio",
+              "pattern": "Correo inválido"
+            }
+          },
+          {
+            "name": "confirm-email",
+            "label": "Confirme Correo Electrónico",
+            "type": "email",
+            "placeholder": "Confirme su correo electrónico",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$",
+            "errors": {
+              "required": "El correo es obligatorio",
+              "pattern": "Correo inválido"
+            } 
+          },
+          {
+            "label": "Autorizo a que todas la comunicacione en la atenciópn de esta denuncia se realicen a la dirección de correo electrónico antes señalada.",
+            "type": "checkbox",
+            "colspan": 2,
+            "content": [
+              {
+                "label": "Confirmo que la información proporcionada es correcta y completa."
+              }
+            ]
+          },
+
+          {
+            "name": "phone-type",
+            "type": "select",
+            "label": "Tipo de Teléfono",
+            "content": "phone-type"
+          },
+          { 
+            "name": "phone-number",
+            "label": "Número Telefono",
+            "placeholder": "Ingrese su numero de telefono",
+            "required": true,
+            "errors": {
+              "required": "El número de teléfono es obligatorio",
+              "pattern": "Número de teléfono inválido" 
+            },
+            "pattern": "^[0-9]{8,15}$"
+          },
+          {
+            "name": "confirm-phone-number",
+            "label": "Confirme Número Teléfono",
+            "placeholder": "Confirme su numero de telefono",
+            "required": true,
+            "errors": {
+              "required": "El número de teléfono es obligatorio",
+              "pattern": "Número de teléfono inválido" 
+            },
+            "pattern": "^[0-9]{8,15}$"
+          },
+          { "line": true },
+          {
+            "label": "En caso de corresponder pago, ¿desea Recibirlo en su Cuenta Bancaria?",
+            "type": "radio",
+            "content": "yesno",
+            "colspan": 2
+          },
+          {
+            "label": "Podrá modificar esta decisón posteriormente en caso de indicar 'No', se utilizará vale vista para el pago. en caso de indicar 'Si', deberá con los datos de la Cuenta Corriente",
+            "type": "label",
+            "colspan": 2
+          },
+          {
+            "name": "banco",
+            "label": "Institución bancaria",
+            "placeholder": "Seleccione su banco",
+            "type": "select",
+            "content": "bancos-list",
+            "colspan": 2
+          },
+          {
+            "name": "tipo-cuenta",
+            "label": "Tipo de cuenta",
+            "type": "select",
+            "content": "cuentas-tipo",
+            "placeholder": "Seleccione tipo de cuenta",
+            "required": true
+          },
+          {
+            "name": "numero-cuenta",
+            "placeholder": "Ingrese su número de cuenta",
+            "label": "Número de cuenta",
+            "content": "cuentas-tipo"
+          },
+          {
+            "label": "En caso de corresponder pago, sevalidará que el RUT titular de la Cuenta Corriente se corresponda con el RUT siniestrado",
+            "type": "label",
+            "colspan": 2
+          }
+        ]
+      }
+    ]
+  },
+
+  "soap": {
+     "steps": [
+      {
+        "order": 1,
+        "number": 1,
+        "title": "Ingreso denuncia",
+        "subtitle": "Cuéntanos, ¿que fue lo que te pasó?",
+        "shortDescription": "Proporcione los antecedentes básicos del vehículo involucrado",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Al ingresar los datos del vehículo, podremos identificar al asegurado y validar la vigencia del SOAP. Esta información permitirá acelerar el proceso de evaluación, derivación y compensación según corresponda. Es importante que los datos coincidan con el certificado del SOAP vigente.",
+        "fields": [
+          {
+            "title": true,
+            "label": "¿Qué te sucedió?"
+          },
+          {
+            "name": "motivo-soap",
+            "label": "Seleccione un Motivo",
+            "type": "select",
+            "content": "motives",
+            "placeholder": "Seleccione un motivo",
+            "required": true
+          },
+          {
+            "line": true
+          },
+          {
+            "title": true,
+            "label": "Datos Personales"
+          },
+          {
+            "name": "first-name",
+            "type": "text",
+            "label": "Nombre",
+            "placeholder": "Ingrese su nombre de pila",
+            "required": true,
+            "errors": {
+              "required": "El nombre es obligatorio",
+              "minlength": "El nombre debe tener al menos 2 caracteres",
+              "maxlength": "El nombre no puede exceder los 50 caracteres"
+            }
+          },
+          {
+            "name": "last-name",
+            "label": "Apellido",
+            "placeholder": "Ingrese su primer apellido",
+            "required": true,
+            "errors": {
+              "required": "El nombre es obligatorio",
+              "minlength": "El nombre debe tener al menos 2 caracteres",
+              "maxlength": "El nombre no puede exceder los 50 caracteres"
+            }
+          },
+          {
+            "name": "rut",
+            "type": "text",
+            "label": "RUT",
+            "placeholder": "Ingrese su RUT"
+          },
+          {
+            "label": "¿Eres tú el asegurado titular?",
+            "type": "radio",
+            "content": "yesno"
+          }
+        ]
+      },
+      {
+        "order": 2,
+        "number": 2,
+        "title": "Completar Datos",
+        "subtitle": "Indique los detalles del accidente",
+        "shortDescription": "Provide your vehicle information below",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Al ingresar los datos del vehículo, podremos identificar al asegurado y validar la vigencia del SOAP. Esta información permitirá acelerar el proceso de evaluación, derivación y compensación según corresponda. Es importante que los datos coincidan con el certificado del SOAP vigente.",
+        "fields": [
+          {
+            "name": "patente",
+            "label": "Indique la Patente",
+            "type": "select",
+            "content": "ppu",
+            "colspan": 2
+          },
+          {
+            "name": "relato",
+            "label": "Relata los hechos",
+            "type": "textarea",
+            "placeholder": "Ingrese su relato",
+            "help": "El relato de los hechos debe contener entre 30 y 2000 caracteres",
+            "tooltip": "Describa detalladamente lo ocurrido, incluyendo fechas, lugares y circunstancias.",
+            "colspan": 2
+          }
+        ]
+      },
+      {
+        "order": 3,
+        "number": 3,
+        "title": "Cargar Documentación",
+        "subtitle": "Adjunte archivos adicionales",
+        "shortDescription": "Adjunte archivos adicionales relacionados con el accidente",
+        "longDescriptionTitle": "Customised Car Services",
+        "longDescriptionText": "By providing your vehicle information, we can ensure that our services and pricing are tailored to your specific needs. This will save you time and ensure that your car receives the best care possible.",
+        "fields": [
+          {
+            "type": "text",
+            "label": "VIN Number",
+            "placeholder": "Ingrese el número VIN del vehículo",
+            "name": "vin-number",
+            "required": true
+          },
+          {
+            "name": "registration-number",
+            "label": "Registration Number",
+            "placeholder": "Enter"
+          },
+          {
+            "line": true
+          },
+          {
+            "name": "brand",
+            "label": "Brand",
+            "type": "select",
+            "content": "brands"
+          },
+          {
+            "name": "engine-type",
+            "label": "Engine Type",
+            "type": "select",
+            "content": "engines"
+          },
+          {
+            "name": "model",
+            "label": "Model",
+            "type": "select",
+            "content": "models"
+          },
+          {
+            "name": "year",
+            "label": "Year",
+            "type": "select",
+            "content": "years"
+          },
+          {
+            "name": "color",
+            "label": "Color",
+            "type": "select",
+            "content": "colors"
+          }
+        ]
+      },
+      {
+        "order": 4,
+        "number": 4,
+        "title": "Finalizar Denuncia",
+        "subtitle": "Confirme y envíe la solicitud",
+        "shortDescription": "Confirme y envíe la solicitud de denuncia",
+        "longDescriptionTitle": "Servicios Personalizados de Denuncia",
+        "longDescriptionText": "Todas las comunicaciones en el marco del proceso de liquidacion, seran enviadas a tu email, salvo que notifiques la oposición a esta via de comunicación y te será notificado directamente por correo certificado",
+        "fields": [
+          {
+            "label": "Datos del Contacto",
+            "title": true
+          },
+          {
+            "name": "email",
+            "label": "Correo Electrónico",
+            "type": "email",
+            "placeholder": "Ingrese su correo electrónico",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$"
+          },
+          {
+            "label": "Confirme Correo Electrónico",
+            "type": "email",
+            "placeholder": "Confirme su correo electrónico",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$"
+          },
+          {
+            "label": "Autorizo a que todas la comunicacione en la atenciópn de esta denuncia se realicen a la dirección de correo electrónico antes señalada.",
+            "type": "checkbox",
+            "colspan": 2,
+            "content": [
+              {
+                "label": "Confirmo que la información proporcionada es correcta y completa."
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "label": "Tipo de Teléfono",
+            "content": "phone-type"
+          },
+          {
+            "label": "Número Telefono",
+            "placeholder": "Ingrese su numero de telefono"
+          },
+          {
+            "label": "Confirme Número Teléfono",
+            "placeholder": "Confirme su numero de telefono"
+          },        
+          {
+            "line": true
+          },
+          {
+            "label": "En caso de corresponder pago, ¿desea Recibirlo en su Cuenta Bancaria?",
+            "type": "radio",
+            "content": "yesno",
+            "colspan": 2
+          },
+          {
+            "label": "Podrá modificar esta decisón posteriormente en caso de indicar 'No', se utilizará vale vista para el pago. en caso de indicar 'Si', deberá con los datos de la Cuenta Corriente",
+            "type": "label",
+            "colspan": 2
+          },
+          {
+            "label": "Institución bancaria",
+            "type": "select",
+            "content": "bancos-list",
+            "colspan": 2
+          },
+          {
+            "label": "Tipo de cuenta",
+            "type": "select",
+            "content": "cuentas-tipo"
+          },
+          {
+            "label": "Número de cuenta",
+            "content": "cuentas-tipo"
+          },
+          {
+            "label": "En caso de corresponder pago, sevalidará que el RUT titular de la Cuenta Corriente se corresponda con el RUT siniestrado",
+            "type": "label",
+            "colspan": 2
+          }
+        ]
+      }
+    ]
+  },
+
+  "brands": [
+    "Volkswagen",
+    "Toyota",
+    "Ford"
+  ],
+
+  "engines": [
+    "Inline-4, 2.0L TSI",
+    "V6, 3.5L",
+    "Electric"
+  ],
+
+  "models": [
+    "Tayron R-Line",
+    "Golf",
+    "Passat"
+  ],
+
+  "years": [
+    "2024",
+    "2023",
+    "2022"
+  ],
+
+  "colors": [
+    "LC9X (Deep Black Pearl)",
+    "Reflex Silver",
+    "Pure White"
+  ],
+
+  "motives": [
+    "(Seleccione Motivo)",
+    "Accidente",
+    "Robo",
+    "Daño a terceros"
+  ],
+
+  "motives-fraud": [
+    "(Seleccione Motivo)",
+    "Fui victima de usurpación o suplantación de identidad.",
+    "Fui obligado a sacar dinero o realizar Compra."
+  ],
+
+  "motives-report": [
+    "Constancia policial",
+    "Otro tipo de constancia"
+  ],
+
+  "motives-steal": [
+    "Robo de Bicicleta o Scooter",
+    "Robo de Contenido de auto",
+    "Robo de Dinero, cheques carteras o bolsos"
+  ],
+
+  "motives-micromovilidad": [
+    "Robo de Ciclo",
+    "Falleció un Familiar",
+    "Sufrí un accidente",
+    "Me invalidé"
+  ],
+
+  "motives-heatlh": [
+    "Estoy embarazada",
+    "Sufrí un accidente",
+    "Me diagnosticaron una efermedad"
+  ],
+
+  "motives-type": [
+    "Primera denuncia",
+    "Continuación de denuncia"
+  ],
+
+  "motives-cesantia": [
+    "He quedado sin empleo",
+    "Tengo una licencia médica"
+  ],
+
+  "motives-fired": [
+    "Art. 159 n.1 Mutuo Acuerdo de las partes",
+    "Art. 159 n.2 Renuncia voluntaria del trabajador",
+    "Art. 159 n.4 Vencimiento del convenio de contrato",
+    "Art. 159 n.5 conclusion del trabajo que dio origen al contrato",
+    "Art. 161 n.1 Necesidades de la empresa",
+    "Art. 161 n.2 Desahucio escrito del trabajador"
+  ],
+
+  "motives-documentation": [
+    "Finiquito",
+    "Carta Renuncia",
+    "Carta Desahucio",
+    "Carta de Despido",
+    "Certificado de Trabajo",
+    "Certificado de Cotizaciones",
+    "Certificado de Licencia Médica",
+    "Certificado de Cesantía"
+  ],
+
+  "phone-type": [
+    "Telefono movil",
+    "Telefono fijo"
+  ],
+
+  "yesno": [
+    "Sí",
+    "No"
+  ],
+
+  "ppu": [
+    "GPFZ69",
+    "AXDM42",
+    "MXS989"
+  ],
+
+ "terceros": [
+    "Tachires Vidal Araceli Gionava",
+    "Rossetti Maria del Carmen",
+    "Landa Gonzalez Juan Carlos",
+    "Gonzalez Araya Maria del Pilar"
+  ],
+
+  "bancos-list": [
+    "Banco Chile/Edwars",
+    "Santander",
+    "Banco Estado",
+    "Itau",
+    "Scotiabank",
+    "Banco de Credito e Inversiones (BCI)",
+    "Banco Internacional (BICE)",
+    "Banco Consorcio",
+    "Banco Falabella",
+    "Banco Ripley",
+    "Banco Security",
+    "Mercado Pago"    
+  ],
+
+  "cuentas-tipo": [
+    "Cuenta Vista",
+    "Cuenta Corriente",
+    "Cuenta Ahorro"
+  ],
+
+  "insurances-services-products":[
+    {
+      "product": "soap",
+      "title": "Denuncia de SOAP",
+      "name" : "SOAP",
+      "description": "Reporta siniestros en los que hayas estado involucrado como conductor, pasajero o peatón. Este tipo de denuncia cubre tanto daños materiales como lesiones personales que se deriven del incidente.",
+      "icon": "assets/accidente.png",
+      "link": "/soap"
+    },
+    {
+      "product": "robo",
+      "name" : "Denuncia de Robo",
+      "title" : "Robo o Hurto",
+      "description": "Utiliza esta opción si tu vehículo ha sido sustraído total o parcialmente y también puedes denunciar el robo de accesorios, partes o equipamiento del automóvil, siempre que estén incluidos en la cobertura del SOAP vigente.",
+      "icon": "assets/robo.png",
+      "link": "/robo"
+    },
+    {
+      "product": "fraude",
+      "name" : "Denuncia de Fraude",
+      "title" : "Fraude",
+      "description": "Denuncia situaciones en las que terceras personas hayan resultado afectadas por un accidente en el que participaste. Esto incluye daños físicos, lesiones personales o perjuicios materiales a vehículos o bienes de terceros.",
+      "icon": "assets/dano.png",
+      "link": "/fraude"
+    },
+    {
+      "product": "micromovilidad",
+      "name" : "Accidente por Micromobilidad",
+      "title" : "Micromovilidad",
+      "description": "Reporta eventos relacionados con el uso de bicicletas, scooters y otros vehículos de micromovilidad. Esto incluye accidentes, robos o daños a terceros.",
+      "icon": "assets/dano.png",
+      "link": "/micromovilidad"
+    },
+    {
+      "product": "salud",
+      "name" : "Denuncia Seguro de Salud",
+      "title" : "Salud",
+      "description": "Reporta situaciones relacionadas con tu salud, como accidentes, enfermedades o situaciones que requieran atención médica. Este seguro está diseñado para cubrir gastos médicos y hospitalarios.",
+      "icon": "assets/dano.png",
+      "link": "/salud"
+    },
+    {
+      "product": "cesantia",
+      "name" : "Denuncia Cesantia",
+      "title" : "Seguro de Cesantia",
+      "description": "Reporta situaciones relacionadas con tu empleo, como despidos, reducciones de jornada o cualquier circunstancia que afecte tu estabilidad laboral. Este seguro está diseñado para brindar apoyo financiero en caso de cesantía.",
+      "icon": "assets/dano.png",
+      "link": "/cesantia"
+    }
+  
+  ]
+
+}
