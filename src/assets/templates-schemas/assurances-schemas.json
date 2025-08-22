@@ -1618,9 +1618,7 @@
             "label": "Confirme Número Teléfono",
             "placeholder": "Confirme su numero de telefono"
           },        
-          {
-            "line": true
-          },
+          { "line": true },
           {
             "label": "En caso de corresponder pago, ¿desea Recibirlo en su Cuenta Bancaria?",
             "type": "radio",
