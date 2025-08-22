@@ -2,13 +2,12 @@ import { CommonModule, JsonPipe, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { PageRendererComponent } from '../page-renderer-component/page-renderer-component';
 import { RenderBlock } from '../../render-block/render-block';
 
 @Component({
   selector: 'app-home',
   standalone:true,
-  imports: [RouterModule,JsonPipe,CommonModule,PageRendererComponent,RenderBlock],
+  imports: [RouterModule,CommonModule,RenderBlock],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

@@ -3,12 +3,13 @@
 <ng-container [ngSwitch]="block?.type">
 
   <!-- Componentes. -->
-<!-- Renderizar texto plano -->
+  <!-- Renderizar texto plano -->
   <p *ngSwitchCase="'text'" [ngClass]="block.class">{{ block.content }}</p>
+  <!-- Parrafo -->
+  <p *ngSwitchCase="'pagraph'" [ngClass]="block.class">{{ block.content }}</p>
 
   <!-- Renderizar HTML directo -->
-    <div *ngSwitchCase="'html'" [innerHTML]="block.content" [ngClass]="block.class"></div>
-
+  <div *ngSwitchCase="'html'" [innerHTML]="block.content" [ngClass]="block.class"></div>
 
   <!-- Div -->
   <div *ngSwitchCase="'div'" [ngClass]="block.class">
@@ -17,17 +18,60 @@
     </ng-container>
   </div>
 
+  <button *ngSwitchCase="'button'" [ngClass]="block.class" [innerHTML]="block.content"></button>
+
    <!-- HEADER -->
   <header *ngSwitchCase="'header'" [ngClass]="block.class">
     {{ block.content }}
   </header>
 
-  <!-- Parrafo -->
-  <p *ngSwitchCase="'pagraph'" [ngClass]="block.class"> 
+  <!-- UL -->
+  <ul *ngSwitchCase="'ul'" [ngClass]="block.class">
     <ng-container *ngFor="let child of block.children">
       <app-render-block [block]="child"></app-render-block>
     </ng-container>
-  </p>
+  </ul>
+
+  <!-- LI -->
+  <li *ngSwitchCase="'li'" [ngClass]="block.class">
+
+    <ng-container *ngIf="block.content">
+      <section [innerHTML]="block.content"></section>
+    </ng-container>
+
+    <ng-container *ngIf="block.children">
+      <ng-container *ngFor="let child of block.children">
+        <app-render-block [block]="child"></app-render-block>
+      </ng-container>
+    </ng-container>
+  </li>
+
+  <!-- SPAN -->
+  <span *ngSwitchCase="'span'" [ngClass]="block.class" [innerHTML]="block.content"></span>
+
+  <!-- SVG -->
+  <svg 
+    *ngSwitchCase="'svg'"
+    [attr.viewBox]="block.attributes?.viewBox"
+    [attr.width]="block.attributes?.width"
+    [attr.height]="block.attributes?.height"
+    [ngClass]="block.class"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <ng-container *ngFor="let child of block.children">
+      <path
+        *ngIf="child.type === 'path'"
+        [attr.fill]="child.attributes?.fill"
+        [attr.stroke]="child.attributes?.stroke"
+        [attr.stroke-linecap]="child.attributes?.['stroke-linecap']"
+        [attr.stroke-linejoin]="child.attributes?.['stroke-linejoin']"
+        [attr.stroke-width]="child.attributes?.['stroke-width']"
+        [attr.d]="child.attributes?.d"
+      ></path>
+    </ng-container>
+  </svg>
+
+  <!-- PATH -->
 
   <!-- IMAGEN -->
   <img
@@ -47,7 +91,7 @@
     {{ block.content }}
   </section>
 
-   <!-- ASIDE -->
+  <!-- ASIDE -->
   <aside *ngSwitchCase="'aside'" [ngClass]="block.class">
     {{ block.content }}
   </aside>
@@ -72,7 +116,6 @@
       </ng-container>
 
     </ng-container>
-
   </article>
   <!-- Form -->
   <form *ngSwitchCase="'form'" [ngClass]="block.class">
@@ -81,7 +124,6 @@
       <input [type]="field.type" [name]="field.name" class="border p-2 w-full" />
     </div>
   </form>
-
 
   <!-- FOOTER -->
   <footer *ngSwitchCase="'footer'" [ngClass]="block.class">

@@ -7,7 +7,7 @@ import { PromoUno } from '../../components/promo-uno/promo-uno';
 @Component({
   selector: 'app-page-renderer',
   standalone: true,
-  imports: [CommonModule,RenderBlock,PromoUno],
+  imports: [CommonModule,RenderBlock],
   templateUrl: './page-renderer-component.html',
 })
 export class PageRendererComponent implements OnInit {
